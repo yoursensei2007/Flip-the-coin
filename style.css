@@ -1,0 +1,206 @@
+
+/* 
+*  Author: Your Sensei
+* Instagram: https://www.instagram.com/your_sensei2007?igsh=NG5vNnRmYTRzbDk4
+ */
+
+/* Reset CSS*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+}
+
+body{
+  height: 100vh;
+  background: #1d1c21;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Coin */
+#coin{
+  position: absolute;
+  font-size: clamp(3rem, 4vw, 5rem);
+  font-weight: bolder;
+  font-family: serif;
+  color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  background: lightslategrey;
+  box-shadow: inset 2px 0 13px white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform:
+    translateY(-85px)
+    translateX(10%)
+    skewX(60deg)
+    rotateY(50deg)
+    rotateX(70deg)
+    scaleX(3)
+    scaleY(1);
+  transform-style: preserve-3d;
+  transition: 2s;
+}
+
+#shadow{
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: -8px 0 23px black;
+  transform:
+    translateY(-85px)
+    translateX(10%)
+    skewX(60deg)
+    rotateY(50deg)
+    rotateX(70deg)
+    scaleX(3)
+    scaleY(1);
+  filter: blur(3px);
+  opacity: 0.8;
+}
+
+/* Text */
+p{
+  font-size: clamp(1.6rem, 2.5vw, 3rem);
+  font-family: Casual;
+  text-align: center;
+}
+
+/* Inputs */
+select,
+input[type="number"],
+input::placeholder,
+button{
+  font-size: clamp(1.6rem, 2.5vw, 2.6rem);
+  font-family: Casual;
+  width: 90%;
+  color: blue;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin: 3px;
+}
+
+input:focus,
+button:focus,
+select:focus{
+  outline: none;
+  border-color: white;
+}
+
+button{
+  cursor: pointer;
+  background: lavender;
+}
+
+.info{
+  color: royalblue;
+}
+
+#result{
+  font-family: serif;
+}
+
+.money{
+  color: red;
+  font-weight: bolder;
+}
+
+/* Containers */
+#gameBox{
+  display: block;
+  opacity: 1;
+  transition: 0.7s;
+}
+
+#popUpBar{
+  position: absolute;
+  background: lightskyblue;
+  border-radius: 10px;
+  border: 2px solid aqua;
+  padding: 8px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s;
+}
+
+/* Animations */
+@keyframes flipCoin{
+  from{
+    transform:
+      translateY(-190px)
+      translateX(15%)
+      skewX(80deg)
+      rotateY(160deg)
+      rotateX(90deg)
+      scaleX(1)
+      scaleY(0.7);
+  }
+  to{
+    transform:
+      translateY(-85px)
+      translateX(10%)
+      skewX(60deg)
+      rotateY(50deg)
+      rotateX(70deg)
+      scaleX(3)
+      scaleY(1);
+  }
+}
+
+@keyframes popUpMenuOpen{
+  from{ transform: translateX(-500%); }
+  to{ transform: translateX(0); }
+}
+
+@keyframes popUpMenuClose{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(500%); }
+}
+
+.popUpMenuOpen{ animation: popUpMenuOpen 1s 1; }
+.popUpMenuClose{ animation: popUpMenuClose 1s 1; }
+.flipCoin{ animation: flipCoin 2s 1; }
+
+.win{ color: lime; }
+.lose{ color: red; }
+
+/* Responsive */
+@media (max-width:600px){
+  #coin,#shadow{
+    height: 75px;
+    width: 75px;
+  }
+  select,input,button{
+    width: 100%;
+  }
+  #popUpBar{
+    width: 90%;
+  }
+}
+
+@media (max-width:400px){
+  #coin,#shadow{
+    height: 65px;
+    width: 65px;
+  }
+}
+
+
+/* 
+*  Author: Your Sensei
+* Instagram: https://www.instagram.com/your_sensei2007?igsh=NG5vNnRmYTRzbDk4
+ */
