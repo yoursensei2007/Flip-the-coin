@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- By Your_Sensei2007 (Telegram/Instagram)-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="style.css">
+  <title>Flip The Coin</title>
+  
+</head>
+<body>
+  
+  <div id="gameBox">
+    <div id="coin">Coin</div>
+    <div id="shadow"></div>
+    <p id="result"> Flip Your Coin </p>
+    <p class="info">Your Money: <span class="money">1000</span></p>    
+    <button onClick="startGame('bet')">Flip Coin</button>
+  </div>
+  
+  <div id="popUpBar">        
+    <select id="option" onChange="playerInput()">
+      <option hidden disabled selected value="none">Choose your coin</option>
+      <option value="head">Head</option>
+      <option value="tail">Tail</option>      
+    </select>
+    <input style="color: blue;" type="number" id="bet" placeholder="Bet your money">
+    <button onClick="startGame('flip')">Flip Coin</button>
+  </div>
+  
+  <script src="script.js"></script>
+  
+</body>
+      </html>
+        
